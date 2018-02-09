@@ -1,6 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <%@include file="/WEB-INF/views/shared/header.jsp"%>
+
 <section id="services">
 	<div class="container-fluid">
 		<div class="col-lg-8 col-lg-offset-2 text-center text-sm-center">
@@ -9,10 +10,12 @@
 			<hr class="primary">
 		</div>
 	</div>
+	
+	
 	<div class="container col-md-6 col-md-offset-3">
 		<form:form
 			action="${pageContext.request.contextPath}/admin/productInventory/addProduct"
-			method="post" commandName="product" enctype="multipart/form-data">
+			method="post" commandName="product">
 
 			<div class="form-group">
 				<label for="name">Name</label>
@@ -25,66 +28,70 @@
 				<label class="checkbox-inline">
 				<form:radiobutton path="productCategory" id="category" value="iPhone" />iPhone
 				</label>
-				 <label class="checkbox-inline"> <form:radiobutton
-						path="productCategory" id="category" value="samsung" />Samsung
-				</label> <label class="checkbox-inline"> <form:radiobutton
-						path="productCategory" id="category" value="window-phone" />Google
-				</label> <label class="checkbox-inline"> <form:radiobutton
-						path="productCategory" id="category" value="accessory" />Accessory
+				 <label class="checkbox-inline"> 
+				 <form:radiobutton path="productCategory" id="category" value="samsung" />Samsung
+				</label> 
+				<label class="checkbox-inline"> 
+				<form:radiobutton path="productCategory" id="category" value="google" />Google
+				</label> 
+				<label class="checkbox-inline"> 
+				<form:radiobutton path="productCategory" id="category" value="accessory" />Accessory
 				</label>
 			</div>
 
 			<div class="form-group">
 				<label for="description">Description</label>
-				<form:textarea path="productDescription" id="description"
-					cssClass="form-control" />
+				<form:textarea path="productDescription" id="description" cssClass="form-control" />
 			</div>
 
 			<div class="form-group">
 				<label for="price">Price</label>
-				<form:errors path="productPrice" cssStyle="color: red;" />
 				<form:input path="productPrice" id="price" cssClass="form-control" />
 			</div>
 
 			<div class="form-group">
-				<label for="condition">Condition</label> <label
-					class="checkbox-inline"> <form:radiobutton
-						path="productCondition" id="condition" value="new" />New Arrival
-				</label> <label class="checkbox-inline"> <form:radiobutton
-						path="productCondition" id="condition" value="used" />Used
+				<label for="condition">Condition</label>
+				 
+				<label 	class="checkbox-inline">
+				 <form:radiobutton 	path="productCondition" id="condition" value="new" />New Arrival
+				</label> 
+				
+				<label class="checkbox-inline"> 
+				<form:radiobutton 	path="productCondition" id="condition" value="used" />Used
 				</label>
 			</div>
 
 			<div class="form-group">
-				<label for="status">Status</label> <label class="checkbox-inline">
+				<label for="status">Status</label> 
+				<label class="checkbox-inline">
 					<form:radiobutton path="productStatus" id="status" value="active" />Active
-				</label> <label class="checkbox-inline"> <form:radiobutton
-						path="productStatus" id="status" value="inactive" />Inactive
+				</label> 
+				<label class="checkbox-inline"> 
+					<form:radiobutton path="productStatus" id="status" value="inactive" />Inactive
 				</label>
 			</div> 
 
 			<div class="form-group">
 				<label for="unitInStock">Unit In Stock</label>
-				<form:input path="unitInStock" id="unitInStock"
-					cssClass="form-control" />
+				<form:input path="unitInStock" id="unitInStock" cssClass="form-control" />
 			</div>
 
 			<div class="form-group">
 				<label for="manufacturer">Manufacturer</label>
-				<form:input path="productManufacturer" id="manufacturer"
-					cssClass="form-control" />
+				<form:input path="productManufacturer" id="manufacturer" cssClass="form-control" />
 			</div>
 
 			<br>
 			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<input type="submit" value="submit" class="btn btn-success" /> <a
-					href="<c:url value="/admin/productInventory" />"
-					class="btn btn-primary">Cancel</a>
+				<input type="submit" value="submit" class="btn btn-success" /> 
+				<a href="<c:url value='/admin/productInventory' />" class="btn btn-primary">Cancel</a>
 			</div>
 		</form:form>
 	</div>
 
 </section>
+
 <div style="padding-bottom: 5%" ></div>
 <div class="clearfix" /></div>
+
 <%@include file="/WEB-INF/views/shared/footer.jsp"%>

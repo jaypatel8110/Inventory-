@@ -21,7 +21,7 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	@Override
+	
 	public void addProduct(Product product) {
 		Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(product);
@@ -29,7 +29,6 @@ public class ProductDaoImpl implements ProductDao {
 		
 	}
 
-	@Override
 	public Product getProductById(int id) {
 		Session session = sessionFactory.getCurrentSession();
         Product product = (Product) session.get(Product.class, id);
@@ -38,7 +37,6 @@ public class ProductDaoImpl implements ProductDao {
         return product;
 	}
 
-	@Override
 	public List<Product> getAllProducts() {
 		Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Product");
@@ -47,7 +45,6 @@ public class ProductDaoImpl implements ProductDao {
         return productList;
 	}
 
-	@Override
 	public void deleteProduct(int id) {
 		Session session = sessionFactory.getCurrentSession();
         session.delete(getProductById(id));

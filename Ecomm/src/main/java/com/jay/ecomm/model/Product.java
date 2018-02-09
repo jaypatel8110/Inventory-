@@ -1,15 +1,21 @@
 package com.jay.ecomm.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Product {
 
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int productId;
 	private String productName;
 	private String productCategory;
@@ -19,9 +25,8 @@ public class Product {
 	private String productStatus;
 	private int unitInStock;
 	private String productManufacturer;
-	public String getProductName() {
-		return productName;
-	}
+	
+	
 	
 	public int getProductId() {
 		return productId;
@@ -31,6 +36,10 @@ public class Product {
 		this.productId = productId;
 	}
 
+	public String getProductName() {
+		return productName;
+	}
+	
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
