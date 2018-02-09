@@ -35,7 +35,7 @@
 				<td>${product.productPrice} USD </td>
 				<td>
 					<a href="<c:url value='/viewProducts/${product.productId}'/> ">
-					<span class="fas fa-check"></span>
+					<span class="glyphicon glyphicon-flag"></span>
 					</a>
 				</td>
 
